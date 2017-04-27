@@ -2,7 +2,7 @@ var animal = [],
 		car = [],
 		person = [],
 		category = "",
-		url = "http://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&limit=10&q=";
+		url = "https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&limit=10&q=";
 
 $(window).on('load', function() {
 	if (localStorage.getItem('animal') === null) {
@@ -29,7 +29,7 @@ $(window).on('load', function() {
 		var endPoint = $('#endpoint option:selected').val();
 		$('#gifpanel').html('');
 		$('#resultrow').addClass('hide');
-		url = 'http://api.giphy.com/v1/' + endPoint + '/search?api_key=dc6zaTOxFJmzC&limit=10&q=';
+		url = 'https://api.giphy.com/v1/' + endPoint + '/search?api_key=dc6zaTOxFJmzC&limit=10&q=';
   });
 
   $('#addbtn').click(function(event) {
