@@ -1,0 +1,5 @@
+{
+"animal" : ["cat","dog","lion","chicken","cow","sheep","wolf","baboon","zebra","snake","turkey","tiger","gorilla","eagle","camel"],
+"car" : ["acura","ford","bmw","audi","jeep","gmc","lamborghini","mazda","kia","toyota","honda","ferrari","dodge","lexus","nissan"],
+"person" : ["jesus","mahatma gandhi","michael jackson","albert einstein","elvis presley","leonardo da vinci","abraham lincoln","nelson mandela","barack obama","jackie chan","michael jordan","johnny depp","jim carrey","bill gates","donald trump"]
+}

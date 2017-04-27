@@ -1,0 +1,65 @@
+html{
+	height: 100%;
+	background: #f4f4f4 url(../images/bg.jpg) repeat top left;
+}
+body{
+	background-color: transparent;
+	padding-top: 20px;
+}
+.panel{
+	border: 0; 
+	box-shadow: none;
+	background: rgba(0, 0, 0, 0.1);
+}
+.form-group label{
+	margin-left: 20px;
+}
+.form-group input{
+	text-transform: capitalize;
+}
+.btn{
+	text-transform: capitalize;
+	margin: 5px;
+}
+.fa-plus{
+	margin-right: 5px;
+}
+.gifbox{
+	margin: 0 15px 20px 0;
+	text-align: center;
+	border: 1px groove #ccc;
+	border-radius: 5px;
+	padding: 5px;
+	background-color: #eee;
+}
+.callgif{
+	width: 130px;
+}
+.rating{
+	text-align: left;
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 40px;
+	margin: 0 5px 5px;
+	color: #000066;
+}
+.rating img{
+	margin: 0 5px;
+}
+.fa-download{
+  float: right;
+  font-size: 20px;
+  padding: 13px 0;
+  cursor: pointer;
+}
+@media only screen and (max-width: 767px){
+	.container{
+		margin: 0 20px;
+	}
+	.form-group label{
+		margin-left: 0;
+	}
+	#addbtn{
+		margin: 10px 0; 
+	}
+}
