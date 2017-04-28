@@ -12,12 +12,42 @@
 </head>
 <body>
   <div class="container">
+    <div id="header" class="row">
+      <div id="header" class="logo">
+        <img src="assets/images/logo.png" alt="Logo">
+      </div>
+      <div class="help panel panel-default">
+        <div class="panel-body">
+          <div>
+            <ul class="list-group">
+              <li>
+                <span class="instNum" style="color:red;">&#9312;</span>
+                <span>Choose your search item category.</span>
+              </li>
+              <li>
+                <span class="instNum" style="color:green;">&#9313;</span>
+                <span>Choose what type of GIF file you want to search for. Either Regular or Sticker!</span>
+              </li>
+              <li>
+                <span class="instNum" style="color:blue;">&#9314;</span>
+                <span>Add your own item to the list.</span>
+              </li>
+              <li>
+                <span class="instNum" style="color:#000066;">&#9315;</span>
+                <span>You can download your favorite GIF file by clicking on
+                <span style="float: none;" class="fa fa-download"></span> next to each one.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
     <div id="controlrow" class="row">
       <div class="panel panel-default">
         <div class="panel-body">
           <form class="form-inline">
             <div class="form-group">
-              <label for="category">Category:</label>
+              <label for="category"><span class="instNum help" style="color:red;">&#9312;</span>Category:</label>
               <select id="category" class="form-control">
                 <option disabled selected>Select One</option>
                 <option value="animal">Animals</option>
@@ -26,17 +56,18 @@
               </select>
             </div>
             <div class="form-group">
-              <label for="endpoint">Search Endpoint:</label>
+              <label for="endpoint"><span class="instNum help" style="color:green;">&#9313;</span>Search Endpoint:</label>
               <select id="endpoint" class="form-control">
                 <option value="gifs" selected>Gif Search</option>
                 <option value="stickers">Sticker Search</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="newitem">Add Yours:</label>
+              <label for="newitem"><span class="instNum help" style="color:blue;">&#9314;</span>Add Your Item:</label>
               <input type="text" id="newitem" class="form-control" value="">
               <button id ="addbtn" class="btn btn-success" type="button" disabled="disabled"><span class="fa fa-plus"></span>Add</button>
             </div>
+            <span id="help" class="fa fa-question-circle-o pull-right" title="Help" data-show="1"></span>
           </form>
         </div>
       </div>
@@ -52,7 +83,11 @@
       </div>
     </div>
   </div> <!-- container -->
-
+  <div class="footer">
+    <div class="container">
+      <p class="text-center">&copy; Copyright <script>document.write(new Date().getFullYear())</script> Amir Izadpanah</p>
+    </div>
+  </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="assets/js/main.js"></script>
 </body>

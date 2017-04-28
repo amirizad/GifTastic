@@ -6,16 +6,33 @@ body{
 	background-color: transparent;
 	padding-top: 20px;
 }
+.logo{
+	margin-bottom: 20px;
+}
 .panel{
 	border: 0; 
 	box-shadow: none;
 	background: rgba(0, 0, 0, 0.1);
 }
+.form-inline{
+	color:#555;
+}
 .form-group label{
-	margin-left: 20px;
+	font-size: 18px;
+	margin:0 0 0 20px;
 }
 .form-group input{
 	text-transform: capitalize;
+}
+.instNum{
+	font-size: 25px;
+/*	color: #000066;*/
+	margin-right: 5px;
+}
+.list-group li{
+	list-style: none;
+	font-size: 18px;
+	color: #000066;
 }
 .showing, .showing:hover, .showing:focus, .showing:active{
   background-color: #ffdd00;
@@ -26,8 +43,8 @@ body{
 	text-transform: capitalize;
 	margin: 5px;
 }
-.fa-plus{
-	margin-right: 5px;
+.form-control{
+	margin-bottom: 5px;
 }
 .gifbox{
 	margin: 0 15px 20px 0;
@@ -51,11 +68,36 @@ body{
 .rating img{
 	margin: 0 5px;
 }
+.fa-plus{
+	margin-right: 5px;
+}
+#help{
+  font-size: 25px;
+  line-height: 44px;
+  color: #000066;
+}
 .fa-download{
   float: right;
   font-size: 20px;
   padding: 13px 0;
   cursor: pointer;
+}
+#resultrow{
+	margin-bottom: 30px;
+}
+.footer {
+	background-color: #666;
+	color: #ccc;
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	line-height: 40px;
+	border-top: 2px solid #000066;
+	text-align: center;	
+	font-size: 14px
+}
+.footer p, .list-group{
+	margin: 0; 
 }
 @media only screen and (max-width: 767px){
 	.container{

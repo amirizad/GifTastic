@@ -13,8 +13,20 @@ $(window).on('load', function() {
   	person = JSON.parse(localStorage.getItem('person'));
 	}
 
-	
+	$('#help').click(function(){
+		if($(this).attr('data-show') === '1'){
+			$(this).attr('data-show', '0');
+			$('.help').addClass('hide');
+		} else {
+			$(this).attr('data-show', '1');
+			$('.help').removeClass('hide');
+		};
+	});
+
 	$('#category').change(function() {
+		if($('#help').attr('data-show') === '1'){
+			$('#help').trigger('click');
+		};
 		category = $('#category option:selected').val();
 		$('#newitem').attr('placeholder', category + ' Name');
 		$('#gifpanel').html('');
@@ -29,6 +41,7 @@ $(window).on('load', function() {
 
 	$('#endpoint').change(function() {
 		var endPoint = $('#endpoint option:selected').val();
+		$('.callgif').removeClass('showing');
 		$('#gifpanel').html('');
 		$('#resultrow').addClass('hide');
 		url = 'https://api.giphy.com/v1/' + endPoint + '/search?api_key=dc6zaTOxFJmzC&limit=10&q=';
@@ -41,8 +54,6 @@ $(window).on('load', function() {
   	if(newItem && newValue === -1){
   		giphyFuncs.addBtn(newItem);
   		window[category].push(newItem);
-  		$('.callgif').removeClass('showing');
-  		$('.callgif:contains(' + newItem + ')').addClass('showing');
   		giphyFuncs.getGiphy(newItem);
   	} else if (newItem && newValue >= 0){
   		$('.callgif').removeClass('showing');
