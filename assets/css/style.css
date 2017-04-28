@@ -17,6 +17,11 @@ body{
 .form-group input{
 	text-transform: capitalize;
 }
+.showing, .showing:hover, .showing:focus, .showing:active{
+  background-color: #ffdd00;
+  color: #337ab7;
+  font-weight: bold;
+}
 .btn{
 	text-transform: capitalize;
 	margin: 5px;

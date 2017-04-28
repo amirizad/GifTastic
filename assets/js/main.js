@@ -13,6 +13,7 @@ $(window).on('load', function() {
   	person = JSON.parse(localStorage.getItem('person'));
 	}
 
+	
 	$('#category').change(function() {
 		category = $('#category option:selected').val();
 		$('#newitem').attr('placeholder', category + ' Name');
@@ -23,6 +24,7 @@ $(window).on('load', function() {
 		};
 		$('#buttonsrow').removeClass('hide');
 		$('#resultrow').addClass('hide');
+		$('#addbtn').removeAttr('disabled');
   });
 
 	$('#endpoint').change(function() {
@@ -35,10 +37,15 @@ $(window).on('load', function() {
   $('#addbtn').click(function(event) {
   	var newItem = $('#newitem').val().trim().toLowerCase();
   	newItem = newItem.length > 0 ? newItem : null;
-  	if(newItem){
+  	var newValue = $.inArray(newItem, window[category]);
+  	if(newItem && newValue === -1){
   		giphyFuncs.addBtn(newItem);
   		window[category].push(newItem);
   		giphyFuncs.getGiphy(newItem);
+  	} else if (newItem && newValue >= 0){
+  		$('.callgif').removeClass('showing');
+  		$('.callgif:contains(' + newItem + ')').addClass('showing');
+  		giphyFuncs.getGiphy(window[category][newValue]);
   	} else {
   		event.preventDefault();
   	};
@@ -94,10 +101,14 @@ var giphyFuncs = {
 								},
 			 addBtn:  function(text){
 									var btn = $('<button>').addClass('btn btn-primary callgif')
-															.attr({'type':'button', 'title': text}).val(text).text(text).click(giphyFuncs.btnHandler);
+															.attr({'type':'button', 'title': text})
+															.val(text).text(text)
+															.click(giphyFuncs.btnHandler);
 									$('#buttons').append(btn);
 								},
 	 btnHandler:  function (){
+	 								$('.callgif').removeClass('showing');
+	 								$(this).addClass('showing');
 									giphyFuncs.getGiphy($(this).val());
 								},
 			 addGif:  function (rating, still, animated){
@@ -105,7 +116,8 @@ var giphyFuncs = {
 									var $p = $('<p>').addClass('rating').text('Rating:');
 									var $img = $('<img>').attr({'src': 'assets/images/'+ rating +'.jpg', 'alt': rating});
 									var $download = $('<a>').attr({'href':animated, 'download':'GifTastic'});
-									$download.append($('<span>').addClass('fa fa-download').attr('title','Download'));
+									$download.append($('<span>').addClass('fa fa-download')
+																							.attr('title','Download'));
 									$p.append($img, $download);
 									var $gifimg = $('<img>').addClass('gifimg img-thumbnail')
 															.attr({'src':still, 'data-state':'still', 'data-animate':animated, 'data-still':still})
