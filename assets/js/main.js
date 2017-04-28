@@ -41,6 +41,8 @@ $(window).on('load', function() {
   	if(newItem && newValue === -1){
   		giphyFuncs.addBtn(newItem);
   		window[category].push(newItem);
+  		$('.callgif').removeClass('showing');
+  		$('.callgif:contains(' + newItem + ')').addClass('showing');
   		giphyFuncs.getGiphy(newItem);
   	} else if (newItem && newValue >= 0){
   		$('.callgif').removeClass('showing');
